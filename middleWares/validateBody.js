@@ -7,7 +7,7 @@ const validateBody = (schema) => {
     //   throw HttpError(400, "missing fields");
     // }
     if (error) {
-      next(HttpError(400, error.message));
+      return next(HttpError(400, error.message));
     }
     next();
   };
