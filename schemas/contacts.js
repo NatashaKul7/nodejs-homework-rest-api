@@ -2,7 +2,6 @@ const Joi = require("joi");
 
 const addSchema = Joi.object({
   name: Joi.string()
-    .min(6)
     .required()
     .messages({ "any.required": "missing required name field" }),
   email: Joi.string()
