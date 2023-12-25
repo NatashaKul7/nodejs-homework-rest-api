@@ -2,6 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const { handleMongooseError } = require("../helpers");
 const Joi = require("joi");
+// const { token } = require("morgan");
 
 const userSchema = new Schema(
   {
@@ -20,7 +21,14 @@ const userSchema = new Schema(
       enum: ["starter", "pro", "business"],
       default: "starter",
     },
-    token: String,
+    token: {
+      type: String,
+      default: "",
+    },
+    avatarURL: {
+      type: String,
+      required: true,
+    },
   },
   { versionKey: false }
 );
